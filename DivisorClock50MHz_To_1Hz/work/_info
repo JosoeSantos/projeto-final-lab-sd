@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\jssan\OneDrive\LabSD\ProjetoFinal\components\DivisorClock50MHz_To_1Hz
+Edivisorclock
+Z1 w1700191099
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\jssan\OneDrive\LabSD\ProjetoFinal\components\DivisorClock50MHz_To_1Hz
+Z6 8DivisorClock.vhd
+Z7 FDivisorClock.vhd
+l0
+L5
+VU?1:=gfHBVSQf?k21m1:m1
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1700191454.315000
+Z10 !s90 -reportprogress|300|-explicit|-93|DivisorClock.vhd|
+Z11 !s107 DivisorClock.vhd|
+Z12 o-explicit -93 -O0
+Z13 tExplicit 1
+!s100 giJbGgcRZYMWRFJ=;AMWz1
+!i10b 1
+Artl
+R2
+R3
+R4
+DEx4 work 12 divisorclock 0 22 U?1:=gfHBVSQf?k21m1:m1
+l22
+L20
+V>C?[Q:N<Ld]ZoS4B`>6cn1
+!s100 71mXZom`NPGA@Z]d<MFNF0
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!i10b 1
+Etb_divisorclock
+Z14 w1700191409
+R2
+R3
+R4
+R5
+Z15 8tb_DivisorClock.vhd
+Z16 Ftb_DivisorClock.vhd
+l0
+L5
+V=HM_kV@[6>M;zdj9GI:;R1
+!s100 QCFRWM@C36befNCNmTW_R3
+R8
+31
+!i10b 1
+Z17 !s108 1700191454.379000
+Z18 !s90 -reportprogress|300|-explicit|-93|tb_DivisorClock.vhd|
+Z19 !s107 tb_DivisorClock.vhd|
+R12
+R13
+Artl
+R2
+R3
+R4
+Z20 DEx4 work 15 tb_divisorclock 0 22 =HM_kV@[6>M;zdj9GI:;R1
+l36
+L9
+Z21 VDSU=[O`EMg@<oRn1b5^m<0
+Z22 !s100 kOFb]bdNPhcKT4h;7Xf_A2
+R8
+31
+!i10b 1
+R17
+R18
+R19
+R12
+R13

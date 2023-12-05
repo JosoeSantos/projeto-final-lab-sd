@@ -1,0 +1,77 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Aluno\Downloads\Nova pasta
+Esubtractor
+Z1 w1700870375
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Aluno\Downloads\Nova pasta
+Z6 8subtractor.vhd
+Z7 Fsubtractor.vhd
+l0
+L5
+VRMUdG1Dz4]O=mnC7o_[h:2
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1700870773.151000
+Z10 !s90 -reportprogress|300|-explicit|-93|subtractor.vhd|
+Z11 !s107 subtractor.vhd|
+Z12 o-explicit -93 -O0
+Z13 tExplicit 1
+!s100 :Y9?gW>m2e>>1T=U4dYN_2
+!i10b 1
+Artl
+R2
+R3
+R4
+DEx4 work 10 subtractor 0 22 RMUdG1Dz4]O=mnC7o_[h:2
+l17
+L16
+V<oXh;hUhH:E4?jD_jE^Kk1
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 ^?5]zDGMil:2@20RU51hg2
+!i10b 1
+Etb_subtractor
+Z14 w1700870672
+R3
+R4
+R5
+Z15 8tb_subtractor.vhd
+Z16 Ftb_subtractor.vhd
+l0
+L4
+V_ihK0?cQGGk;_o<Di[47P2
+!s100 o`bL5SI88=dQTg1FiK`8A1
+R8
+31
+!i10b 1
+Z17 !s108 1700870773.401000
+Z18 !s90 -reportprogress|300|-explicit|-93|tb_subtractor.vhd|
+Z19 !s107 tb_subtractor.vhd|
+R12
+R13
+Asubtractor
+R3
+R4
+DEx4 work 13 tb_subtractor 0 22 _ihK0?cQGGk;_o<Di[47P2
+l17
+L7
+VK8`ImViDdZV]K82a[kzDS3
+!s100 j30N_2R:nl[HOOKB=e^lK1
+R8
+31
+!i10b 1
+R17
+R18
+R19
+R12
+R13

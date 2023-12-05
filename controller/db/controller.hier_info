@@ -1,0 +1,38 @@
+|controller
+clk => state~1.DATAIN
+reset => state~3.DATAIN
+presenca_cartao => state.DATAB
+presenca_cartao => state.DATAB
+presenca_cartao => Selector0.IN1
+presenca_cartao => Selector2.IN2
+catraca_rodada => state.DATAB
+catraca_rodada => state.OUTPUTSELECT
+catraca_rodada => state.OUTPUTSELECT
+timer_clock => state.DATAB
+timer_clock => Selector4.IN4
+timer_clock => state.DATAB
+timer_clock => Selector5.IN1
+saldo_maior_tarifa => process_0.IN0
+resposta_banco_existe => state.OUTPUTSELECT
+resposta_banco_existe => state.OUTPUTSELECT
+resposta_banco_existe => state.OUTPUTSELECT
+resposta_banco_existe => state.OUTPUTSELECT
+resposta_banco_existe => Selector2.IN5
+resposta_banco_existe => Selector1.IN2
+resposta_banco_existe => Selector3.IN2
+resposta_banco_existe => Selector6.IN2
+resposta_banco_ok => state.DATAB
+resposta_banco_ok => process_0.IN1
+resposta_banco_ok => state.DATAB
+ld_reg_id <= ld_reg_id.DB_MAX_OUTPUT_PORT_TYPE
+reset_reg_id <= <GND>
+set_new_ballance_as_db_out <= <GND>
+load_db_out <= load_db_out.DB_MAX_OUTPUT_PORT_TYPE
+reset_timer <= reset_timer.DB_MAX_OUTPUT_PORT_TYPE
+display_on <= <GND>
+display_error <= display_error.DB_MAX_OUTPUT_PORT_TYPE
+abrir_catraca <= abrir_catraca.DB_MAX_OUTPUT_PORT_TYPE
+leitura_cartao <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+sistema_onibus <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+
+

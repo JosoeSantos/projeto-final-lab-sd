@@ -1,0 +1,175 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use ieee.numeric_std.all;
+
+entity datapath is
+	port
+	(
+	  -- inputs
+		id_cartao : in std_logic_vector (15 downto 0);
+		banco_in : in std_logic_vector (15 downto 0);
+		preco_in : in std_logic;
+		id_reg_id : in std_logic; 
+		reset_reg_id : in std_logic;
+		id_reg_db : in std_logic;
+		reset_reg_db : in std_logic;
+		v_ballance_as_db_out : in std_logic;
+		load_db_out : in std_logic;
+		reset_timer : in std_logic;
+		display_on : in std_logic;
+		CLK: in std_logic;
+		display_error: in std_logic;
+		
+
+    -- outputs
+		presenca_cartao : out std_logic;
+		catraca_rodada : out std_logic;
+		timer_clock : out std_logic;
+		ballance_it_price : out std_logic;
+		ballance_eq_price : out std_logic;
+		ballance_gt_price : out std_logic;
+		abrir_catraca : out std_logic;
+		leitura_cartao : out std_logic;
+		saida_display : out std_logic_vector (15 downto 0);
+		saida_banco: out std_logic_vector (15 downto 0);
+	);
+end datapath;
+
+architecture dataflow of datapath is
+  -- all components should be declared here
+	component registrador is
+		generic
+		(
+			DATA_WIDTH : natural := 16
+		);
+
+		port(
+			clock_reg: in std_logic;
+			I: in std_logic (DATA_WIDTH - 1 downto 0);
+			W: in std_logic;
+			R: in std_logic;
+			Q_reg: out std_logic_vector (DATA_WIDTH - 1 downto 0)
+		);
+   end component;
+
+	component comparador is
+    generic (
+        DATA_WIDTH : natural := 16
+    );
+    port (
+        A_comp   : in std_logic_vector (DATA_WIDTH - 1 downto 0);
+        B_comp   : in std_logic_vector (DATA_WIDTH - 1 downto 0);
+        it	: out std_logic;
+		eq	: out std_logic;
+		gt	: out std_logic
+    );
+	end component;
+	
+	component mux is
+    generic (
+        DATA_WIDTH : natural := 16
+    );
+    port (
+        A_mux   : in std_logic_vector (DATA_WIDTH - 1 downto 0);
+        B_mux   : in std_logic_vector (DATA_WIDTH - 1 downto 0);
+        Q_mux   : out std_logic_vector (DATA_WIDTH - 1 downto 0);
+		S   : in std_logic
+    );
+	end component;
+	
+	component timer is
+		port
+		(
+			clock_timer: in std_logic;
+			reset	: in std_logic;
+			timer_clock	: out std_logic
+		);
+   end component;
+
+	component subtrator is
+	generic
+		(
+			DATA_WIDTH : natural := 16
+		);
+		port (
+			A_sub   : in std_logic_vector (DATA_WIDTH - 1 downto 0);
+			B_sub   : in std_logic_vector (DATA_WIDTH - 1 downto 0);
+			Q_sub  : out std_logic_vector (DATA_WIDTH - 1 downto 0)
+		);
+   end component;
+
+signal fio_Q_reg_banco: std_logic_vector(15 downto 0);
+signal fio_Q_reg_preco: std_logic_vector(15 downto 0);
+signal fio_Q_mux_cartao: std_logic_vector(15 downto 0);
+signal fio_Q_subtrator: std_logic_vector(15 downto 0);
+signal fio_Q_mux_sub: std_logic_vector(15 downto 0);
+
+begin
+	--  register instances
+	reg_preco: registrador generic map (DATA_WIDTH => 16) port map(
+		clock_reg => CLK,
+		I => preco_in,
+		W => id_reg_id,
+		R => reset_reg_id,
+		Q_reg => fio_Q_reg_preco
+	);
+
+	reg_banco: registrador generic map (DATA_WIDTH => 16) port map(
+		clock_reg => CLK,
+		I => banco_in,
+		W => id_reg_db,
+		R => reset_reg_db,
+		Q_reg => fio_Q_reg_banco
+	);
+	
+	reg_mux: registrador generic map (DATA_WIDTH => 16) port map(
+		clock_reg => CLK,
+		I =>  fio_Q_mux_cartao,
+		W => id_reg_db,
+		R => reset_reg_db,
+		Q_reg => saida_banco
+	);
+
+	timer: timer generic map (DATA_WIDTH => 1) port map(
+		clock_timer => CLK,
+		reset => reset_timer,
+		timer_clock	=> timer_clock
+	);
+
+	comparador: comparador generic map (DATA_WIDTH => 16) port map( ---
+		A_comp => fio_Q_reg_banco,
+        B_comp => fio_Q_reg_preco,
+        it	=> ballance_it_price,
+		eq	: ballance_eq_price,
+		gt	: ballance_gt_price
+	);
+
+	subtrator: subtrator generic map (DATA_WIDTH => 16) port map (
+		A_sub => fio_Q_reg_banco,
+        B_sub => fio_Q_reg_preco,
+		Q_sub => fio_Q_subtrator
+	);
+	
+	mux_subtrator: mux generic map (DATA_WIDTH => 16) port map (
+		A_mux => fio_Q_subtrator,
+        B_mux => -1,
+		Q_mux => fio_Q_mux_sub, 
+		S => display_error
+	);
+	
+	mux_mux: mux generic map (DATA_WIDTH => 16) port map (
+		A_mux => 0,
+        B_mux => fio_Q_mux_sub,
+		Q_mux => saida_display,
+		S => display_on
+	);
+	
+	mux_cartao: mux generic map (DATA_WIDTH => 16) port map (
+		A_mux => id_cartao,
+        B_mux => saida_display,
+		Q_mux => fio_Q_mux_cartao,
+		S => v_ballance_as_db_out
+	);
+
+end dataflow;
+
