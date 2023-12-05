@@ -172,7 +172,7 @@ begin
 	
 	mux_display: mux2 generic map (DATA_WIDTH => 16) port map (
 		a => "0000000000000000",
-      b => fio_Q_mux_sub,
+      	b => fio_Q_mux_sub,
 		o => fio_Q_mux_display,
 		s => display_on
 	);

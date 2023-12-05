@@ -42,7 +42,7 @@ architecture test of tb_datapath is
     -- inputs
     signal fio_id_cartao: std_logic_vector (15 downto 0) :=  "0000000000000000";
     signal fio_banco_in: std_logic_vector (15 downto 0) := "0000000000000000";
-    signal fio_preco_in: std_logic_vector (15 downto 0) := '0';
+    signal fio_preco_in: std_logic_vector (15 downto 0) := "0000000000000000";
     signal fio_id_reg_id: std_logic :='0'; 
     signal fio_reset_reg_id: std_logic :='0';
     signal fio_id_reg_db: std_logic :='0';
@@ -99,6 +99,6 @@ begin
     --stimulus process
 	fio_CLK <= not fio_CLK after 1 ns;
 
-	fio_banco_in <= "0000000000000001" after 1 ns;
-    fio_preco_in <= '1' after 1 ns;
+	fio_banco_in <= "0000000000000111" after 1 ns;
+    fio_preco_in <= "0000000000000011" after 1 ns;
 end test;
