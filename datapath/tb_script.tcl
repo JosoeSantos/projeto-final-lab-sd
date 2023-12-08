@@ -18,10 +18,17 @@ vcom -explicit  -93 "datapath.vhd"
 vcom -explicit  -93 "tb_datapath.vhd"
 vsim -t 1ns   -lib work tb_datapath
 add wave sim:/tb_datapath/*
+add wave sim:/tb_datapath/datapath_instance/fio_Q_reg_banco  
+add wave sim:/tb_datapath/datapath_instance/fio_Q_reg_preco 
+add wave sim:/tb_datapath/datapath_instance/fio_Q_mux_cartao 
+add wave sim:/tb_datapath/datapath_instance/fio_Q_subtrator 
+add wave sim:/tb_datapath/datapath_instance/fio_Q_mux_sub 
+add wave sim:/tb_datapath/datapath_instance/fio_Q_mux_display 
 do {wave.do}
 view wave
 view structure
 view signals
 run 20ns
+wave zoom full
 #quit -force
 

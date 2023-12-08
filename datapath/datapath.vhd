@@ -19,17 +19,21 @@ entity datapath is
 		display_on : in std_logic;
 		CLK: in std_logic;
 		display_error: in std_logic;
+		presenca_cartao : in std_logic;
+		catraca_rodada : in std_logic;
+		abrir_catraca : in std_logic;
+		leitura_cartao : in std_logic;
 		
 
     -- outputs
-		presenca_cartao : out std_logic;
-		catraca_rodada : out std_logic;
+		presenca_cartao_out : out std_logic;
+		catraca_rodada_out : out std_logic;
 		timer_clock : out std_logic;
 		ballance_it_price : out std_logic;
 		ballance_eq_price : out std_logic;
 		ballance_gt_price : out std_logic;
-		abrir_catraca : out std_logic;
-		leitura_cartao : out std_logic;
+		abrir_catraca_out : out std_logic;
+		leitura_cartao_out : out std_logic;
 		saida_display : out std_logic_vector (15 downto 0);
 		saida_banco: out std_logic_vector (15 downto 0)
 	);

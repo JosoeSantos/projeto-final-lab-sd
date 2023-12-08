@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\A virada\projeto-final-lab-sd\datapath
+Edatapath
+Z1 w1702044904
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\A virada\projeto-final-lab-sd\datapath
+Z6 8datapath.vhd
+Z7 Fdatapath.vhd
+l0
+L5
+V5TPRc>li>9ZGgWACUX2mP3
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1702046238.663000
+Z10 !s90 -reportprogress|300|-explicit|-93|datapath.vhd|
+Z11 !s107 datapath.vhd|
+Z12 o-explicit -93 -O0
+Z13 tExplicit 1
+!s100 UL:W``2TaDaGHg;Q9dASb2
+!i10b 1
+Adataflow
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 5TPRc>li>9ZGgWACUX2mP3
+l124
+L42
+V]BmVHPKHmGi;SIgOiLg2[1
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 f9o6[zBI3LiA:_8aPc:C[2
+!i10b 1
+Etb_datapath
+Z14 w1702046234
+R2
+R3
+R4
+R5
+Z15 8tb_datapath.vhd
+Z16 Ftb_datapath.vhd
+l0
+L5
+VezzRK25EfmnBCdN8=JZ:]2
+!s100 [F]?<9k9mLK@6o`YL1YDc1
+R8
+31
+!i10b 1
+Z17 !s108 1702046238.818000
+Z18 !s90 -reportprogress|300|-explicit|-93|tb_datapath.vhd|
+Z19 !s107 tb_datapath.vhd|
+R12
+R13
+Atest
+R2
+R3
+R4
+DEx4 work 11 tb_datapath 0 22 ezzRK25EfmnBCdN8=JZ:]2
+l79
+L9
+VLE_5<l:QYNV=:E6WRCgi40
+!s100 oRm<e?;Z33l9n8QDK`=1W1
+R8
+31
+!i10b 1
+R17
+R18
+R19
+R12
+R13
