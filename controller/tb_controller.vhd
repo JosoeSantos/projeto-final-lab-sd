@@ -74,8 +74,10 @@ begin
     );
 
   fio_clk             <= not fio_clk after 1 ns;
-  fio_presenca_cartao <= '1' after 2 ns, '0' after 4 ns, '1' after 6 ns;
-  fio_resposta_banco_existe <= '1' after 4 ns, '0' after 25 ns, '1' after 33 ns;
+  fio_presenca_cartao <= '1' after 2 ns, '0' after 4 ns, '1' after 6 ns, '0' after 34 ns;
+  fio_resposta_banco_existe <= '1' after 4 ns, '0' after 25 ns, '1' after 33 ns, '0' after 34 ns, '1' after 38 ns;
   fio_resposta_banco_ok     <= '0' after 4 ns, '1' after 8 ns, '0' after 25 ns, '1' after 32 ns;
   fio_saldo_maior_tarifa    <= '1' after 25 ns;
+  fio_catraca_rodada <= '1' after 34 ns;
 end architecture;
+
