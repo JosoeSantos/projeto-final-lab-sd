@@ -116,7 +116,12 @@ architecture dataflow of datapath is
   -- signal fio_saida_display: std_logic_vector(15 downto 0);
 begin
   --  register instances
-  reg_preco: flip_flop
+	catraca_rodada_out <= catraca_rodada;
+	presenca_cartao_out <= presenca_cartao;
+	abrir_catraca_out <= abrir_catraca;
+	leitura_cartao_out <= leitura_cartao;
+
+  	reg_preco: flip_flop
     generic map (DATA_WIDTH => 16)
     port map (
       clock => CLK,
