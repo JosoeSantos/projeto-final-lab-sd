@@ -24,7 +24,6 @@ add wave sim:/tb_datapath/datapath_instance/fio_Q_mux_cartao
 add wave sim:/tb_datapath/datapath_instance/fio_Q_subtrator 
 add wave sim:/tb_datapath/datapath_instance/fio_Q_mux_sub 
 add wave sim:/tb_datapath/datapath_instance/fio_Q_mux_display 
-do {wave.do}
 view wave
 view structure
 view signals

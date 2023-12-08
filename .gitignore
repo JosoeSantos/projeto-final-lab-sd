@@ -2,3 +2,8 @@ output_files/
 incremental_db/
 simulation/
 work/
+db/
+*.rpt
+*.qws
+wlft*
+vsim*
