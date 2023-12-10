@@ -96,7 +96,7 @@ begin
 					end if;
 				when s8 => -- ESTADO DE ERRO
 					if timer_clock = '1' then
-						state <= s7;
+						state <= s4; -- volta a esperar sinal do cartão
 					else
 						state <= s8;
 					end if;
@@ -199,7 +199,7 @@ begin
 				reset_reg_id <= '0';
 				set_new_ballance_as_db_out <= '0';
 				load_db_out <= '0';
-				reset_timer <= '1';
+				reset_timer <= '0';
 				display_on <= '0';
 				display_error <= '0';
 				abrir_catraca <= '1';
