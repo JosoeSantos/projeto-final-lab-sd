@@ -9,11 +9,11 @@ entity datapath is
 		id_cartao : in std_logic_vector (15 downto 0);
 		banco_in : in std_logic_vector (15 downto 0);
 		preco_in : in std_logic_vector (15 downto 0);
-		id_reg_id : in std_logic; 
+		ld_reg_id : in std_logic; 
 		reset_reg_id : in std_logic;
-		id_reg_db : in std_logic;
+		ld_reg_db : in std_logic;
 		reset_reg_db : in std_logic;
-		v_ballance_as_db_out : in std_logic;
+		set_new_ballance_as_db_out : in std_logic;
 		load_db_out : in std_logic;
 		reset_timer : in std_logic;
 		display_on : in std_logic;
@@ -22,8 +22,6 @@ entity datapath is
 		
 
     -- outputs
-		presenca_cartao : out std_logic;
-		catraca_rodada : out std_logic;
 		timer_clock : out std_logic;
 		ballance_it_price : out std_logic;
 		ballance_eq_price : out std_logic;
@@ -122,7 +120,7 @@ begin
 	reg_preco: flip_flop generic map (DATA_WIDTH => 16) port map(
 		clock => CLK,
 		D => preco_in,
-		W => id_reg_id,
+		W => ld_reg_id,
 		R => reset_reg_id,
 		Q => fio_Q_reg_preco
 	);
@@ -130,7 +128,7 @@ begin
 	reg_banco: flip_flop generic map (DATA_WIDTH => 16) port map(
 		clock=> CLK,
 		D => banco_in,
-		W => id_reg_db,
+		W => ld_reg_db,
 		R => reset_reg_db,
 		Q => fio_Q_reg_banco
 	);
@@ -138,7 +136,7 @@ begin
 	reg_mux: flip_flop generic map (DATA_WIDTH => 16) port map(
 		clock => CLK,
 		D =>  fio_Q_mux_cartao,
-		W => id_reg_db,
+		W => ld_reg_db,
 		R => reset_reg_db,
 		Q => saida_banco
 	);
@@ -181,7 +179,7 @@ begin
 		a => id_cartao,
       b => fio_Q_mux_display, -- código de erro
 		o => fio_Q_mux_cartao,
-		s => v_ballance_as_db_out
+		s => set_new_ballance_as_db_out
 	);
 end dataflow;
 

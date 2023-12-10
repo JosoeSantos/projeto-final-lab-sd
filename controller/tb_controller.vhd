@@ -73,11 +73,13 @@ begin
       sistema_onibus             => fio_sistema_onibus
     );
 
-  fio_clk             <= not fio_clk after 1 ns;
-  fio_presenca_cartao <= '1' after 2 ns, '0' after 4 ns, '1' after 6 ns, '0' after 34 ns;
+  fio_clk                   <= not fio_clk after 1 ns;
+  fio_timer_clock           <= not fio_timer_clock after 5 ns;
+  fio_presenca_cartao       <= '1' after 2 ns, '0' after 4 ns, '1' after 6 ns, '0' after 34 ns, '1' after 48 ns, '0' after 52 ns, '1' after 62 ns, '0' after 69 ns;
   fio_resposta_banco_existe <= '1' after 4 ns, '0' after 25 ns, '1' after 33 ns, '0' after 34 ns, '1' after 38 ns;
-  fio_resposta_banco_ok     <= '0' after 4 ns, '1' after 8 ns, '0' after 25 ns, '1' after 32 ns;
+  fio_resposta_banco_ok     <= '0' after 4 ns, '1' after 8 ns, '0' after 25 ns, '1' after 32 ns, '0' after 62 ns;
   fio_saldo_maior_tarifa    <= '1' after 25 ns;
-  fio_catraca_rodada <= '1' after 34 ns;
+  fio_catraca_rodada        <= '1' after 45 ns;
+  fio_reset                 <= '1' after 62 ns, '0' after 64 ns;
 end architecture;
 

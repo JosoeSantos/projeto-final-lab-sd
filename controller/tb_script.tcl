@@ -16,7 +16,7 @@ add wave sim:/tb_controller/instance_dut/state
 view wave
 view structure
 view signals
-run 200ns
+run 75ns
 wave zoom full
 #quit -force
 

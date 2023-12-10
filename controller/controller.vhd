@@ -95,7 +95,7 @@ begin
 						state <= s9;
 					end if;
 				when s8 => -- ESTADO DE ERRO
-					if timer_clock = '1' then
+					if timer_clock='1' then
 						state <= s4; -- volta a esperar sinal do cartão
 					else
 						state <= s8;
