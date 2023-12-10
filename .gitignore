@@ -3,3 +3,7 @@ incremental_db/
 simulation/
 db/
 work/
+*.rpt
+*.qws
+wlft*
+vsim*
