@@ -1,7 +1,5 @@
 #
 #vsim -do tb_script.do
-# cd C:/Users/jssan/OneDrive/LabSD/ProjetoFinal/components/controller
-# set ms [examine sim/:tb:uut:imem:mem_array_size]
 
 if {[file exists work]} {
 vdel -lib work -all

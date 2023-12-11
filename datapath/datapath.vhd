@@ -5,35 +5,27 @@ library IEEE;
 entity datapath is
   port (
     -- inputs
-    id_cartao            : in  std_logic_vector(15 downto 0);
-    banco_in             : in  std_logic_vector(15 downto 0);
-    preco_in             : in  std_logic_vector(15 downto 0);
-    id_reg_id            : in  std_logic;
-    reset_reg_id         : in  std_logic;
-    id_reg_db            : in  std_logic;
-    reset_reg_db         : in  std_logic;
+    id_cartao                  : in  std_logic_vector(15 downto 0);
+    banco_in                   : in  std_logic_vector(15 downto 0);
+    preco_in                   : in  std_logic_vector(15 downto 0);
+    ld_reg_id                  : in  std_logic;
+    reset_reg_id               : in  std_logic;
+    ld_reg_db                  : in  std_logic;
+    reset_reg_db               : in  std_logic;
     set_new_ballance_as_db_out : in  std_logic;
-    load_db_out          : in  std_logic;
-    reset_timer          : in  std_logic;
-    display_on           : in  std_logic;
-    CLK                  : in  std_logic;
-    display_error        : in  std_logic;
-    presenca_cartao      : in  std_logic;
-    catraca_rodada       : in  std_logic;
-    abrir_catraca        : in  std_logic;
-    leitura_cartao       : in  std_logic;
+    load_db_out                : in  std_logic;
+    reset_timer                : in  std_logic;
+    display_on                 : in  std_logic;
+    CLK                        : in  std_logic;
+    display_error              : in  std_logic;
 
     -- outputs
-    presenca_cartao_out  : out std_logic;
-    catraca_rodada_out   : out std_logic;
-    timer_clock          : out std_logic;
-    ballance_it_price    : out std_logic;
-    ballance_eq_price    : out std_logic;
-    ballance_gt_price    : out std_logic;
-    abrir_catraca_out    : out std_logic;
-    leitura_cartao_out   : out std_logic;
-    saida_display        : out std_logic_vector(15 downto 0);
-    saida_banco          : out std_logic_vector(15 downto 0)
+    timer_clock                : out std_logic;
+    ballance_it_price          : out std_logic;
+    ballance_eq_price          : out std_logic;
+    ballance_gt_price          : out std_logic;
+    saida_display              : out std_logic_vector(15 downto 0);
+    saida_banco                : out std_logic_vector(15 downto 0)
   );
 end entity;
 
@@ -121,7 +113,7 @@ begin
     port map (
       clock => CLK,
       D     => preco_in,
-      W     => id_reg_id,
+      W     => ld_reg_id,
       R     => reset_reg_id,
       Q     => fio_Q_reg_preco
     );
@@ -131,7 +123,7 @@ begin
     port map (
       clock => CLK,
       D     => banco_in,
-      W     => id_reg_db,
+      W     => ld_reg_db,
       R     => reset_reg_db,
       Q     => fio_Q_reg_banco
     );
@@ -141,7 +133,7 @@ begin
     port map (
       clock => CLK,
       D     => fio_Q_mux_cartao,
-      W     => id_reg_db,
+      W     => ld_reg_db,
       R     => reset_reg_db,
       Q     => saida_banco
     );
