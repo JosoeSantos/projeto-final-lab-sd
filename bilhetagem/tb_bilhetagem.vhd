@@ -35,7 +35,7 @@ architecture test of tb_bilhetagem is
   signal fio_leitura_cartao : std_logic := '0';
 
   signal fio_id_cartao : std_logic_vector(15 downto 0) := "0000000000001111";
-  signal fio_banco_in  : std_logic_vector(15 downto 0) := (others => '0');
+  signal fio_banco_in  : std_logic_vector(15 downto 0) := "0000010000001101";
   signal fio_preco_in  : std_logic_vector(15 downto 0) := (others => '0');
 
   signal fio_saida_banco   : std_logic_vector(15 downto 0) := (others => '0');

@@ -100,12 +100,6 @@ architecture dataflow of datapath is
   signal fio_Q_mux_sub     : std_logic_vector(15 downto 0);
   signal fio_Q_mux_display : std_logic_vector(15 downto 0);
 
-  -- sinais controladora
-  -- signal fio_presenca_cartao: std_logic_vector(15 downto 0);
-  -- signal fio_catraca-rodada: std_logic_vector(15 downto 0);
-  -- signal fio_abrir_catraca: std_logic_vector(15 downto 0);
-  -- signal fio_leitura_cartao: std_logic_vector(15 downto 0);
-  -- signal fio_saida_display: std_logic_vector(15 downto 0);
 begin
   --  register instances
   reg_preco: flip_flop
@@ -139,7 +133,7 @@ begin
     );
 
   timer_instance: DivisorClock
-    generic map (OUTPUT_CLOCK => 5)
+    generic map (OUTPUT_CLOCK => 5, INPUT_CLOCK => 1)
     port map (
       CLOCK_50MHz => CLK,
       reset       => reset_timer,
@@ -190,5 +184,7 @@ begin
       o => fio_Q_mux_cartao,
       s => set_new_ballance_as_db_out
     );
+
+  saida_display <= fio_Q_mux_display;
 end architecture;
 

@@ -57,6 +57,7 @@ architecture connection of bilhetagem is
       resposta_banco_existe      : in  std_logic;
       resposta_banco_ok          : in  std_logic; -- erro serÃ¡ o inverso do ok(Talvez) --
       ld_reg_id                  : out std_logic;
+      ld_reg_db                  : out std_logic;
       reset_reg_id               : out std_logic;
       set_new_ballance_as_db_out : out std_logic;
       load_db_out                : out std_logic;
@@ -93,6 +94,7 @@ begin
       resposta_banco_ok          => resposta_banco_ok,
       ld_reg_id                  => ld_reg_id,
       reset_reg_id               => reset_reg_id,
+      ld_reg_db                  => ld_reg_db,
       set_new_ballance_as_db_out => set_new_ballance_as_db_out,
       load_db_out                => load_db_out,
       reset_timer                => reset_timer,
@@ -119,7 +121,7 @@ begin
       CLK                        => clock,
       display_error              => display_error,
       timer_clock                => timer_clock,
-      ballance_it_price          => ballance_gt_price,
+      ballance_gt_price          => ballance_gt_price,
       saida_display              => saida_display,
       saida_banco                => saida_banco
     );
